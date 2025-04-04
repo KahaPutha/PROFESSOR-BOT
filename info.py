@@ -64,11 +64,6 @@ PM_IMDB = is_enabled(environ.get('PM_IMDB', "True"), True)
 IMDB = is_enabled(environ.get('IMDB', "True"), True)
 SINGLE_BUTTON = is_enabled(environ.get('SINGLE_BUTTON', "True"), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "@Unlimited_Movie_Zone\n\n📕 File Name: {file_name}\n\n💾 Size: {file_size}")
-await client.send_cached_media(
-    chat_id=query.from_user.id,
-    file_id=file_id,
-    caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size)
-)
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", None)
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", script.IMDB_TEMPLATE)
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
